@@ -303,7 +303,7 @@ case object TimestampType extends NativeType {
   }
 }
 
-case object DateType extends NativeType {
+case object DateType extends NativeType with PrimitiveType {
   private[sql] type JvmType = Date
 
   @transient private[sql] lazy val tag = ScalaReflectionLock.synchronized { typeTag[JvmType] }
